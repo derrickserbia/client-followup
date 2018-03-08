@@ -1,3 +1,3 @@
-udo vim /etc/apache2/sites-available/jenkins.conf
+sudo vim /etc/apache2/sites-available/jenkins.conf
 sudo a2ensite jenkins
 sudo service apache2 reload
