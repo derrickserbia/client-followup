@@ -7,13 +7,14 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
     client:{
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+
+      // leave Jasmine Spec Runner output visible in browser
+      clearContext: false
     },
     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly' ],
@@ -22,12 +23,34 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'kjhtml'],
     port: 9876,
+
+    // enable / disable colors in the output (reporters and logs)
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['PhantomJS'],
-    singleRun: false
+
+    // enable / disable watching  e and executing tests whenever any file changes
+    autoWatch: false,
+    browsers: ['PhantomJS', 'PhantomJS_custom'],
+    phantomjsLauncher: {
+
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom) 
+      exitOnResourceError: true
+    },
+    customLaunchers: {
+      'PhantomJS_custom': {
+        base: 'PhantomJS',
+        flags: ['--load-images=false']
+      }
+    },
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: true
   });
 };
