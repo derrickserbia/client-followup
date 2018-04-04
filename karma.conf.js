@@ -17,7 +17,7 @@ module.exports = function (config) {
       clearContext: false
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: [ 'html', 'lcovonly' , 'dots', 'junit' ],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -28,6 +28,9 @@ module.exports = function (config) {
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'kjhtml'],
+    junitReporter = {
+      outputFile: 'test-results.xml'
+    },
     port: 9876,
 
     // enable / disable colors in the output (reporters and logs)
