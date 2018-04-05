@@ -18,7 +18,7 @@ module.exports = function (config) {
       clearContext: false
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' , 'dots', 'junit' ],
+      reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
     angularCli: {
@@ -28,7 +28,7 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'dots', 'junit'],
     junitReporter : {
       outputFile: 'test-results.xml'
     },
