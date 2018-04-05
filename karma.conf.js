@@ -30,6 +30,7 @@ module.exports = function (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'kjhtml', 'dots', 'junit'],
     junitReporter : {
+      outputDir: 'testResults',
       outputFile: 'test-results.xml'
     },
     port: 9876,
@@ -40,7 +41,7 @@ module.exports = function (config) {
 
     // enable / disable watching  e and executing tests whenever any file changes
     autoWatch: false,
-    browsers: ['PhantomJS', 'PhantomJS_custom'],
+    browsers: ['PhantomJS_custom'],
     phantomjsLauncher: {
 
       // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom) 
