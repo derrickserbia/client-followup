@@ -37,7 +37,7 @@ module.exports = function (config) {
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
     // enable / disable watching  e and executing tests whenever any file changes
     autoWatch: false,
