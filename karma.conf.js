@@ -49,7 +49,9 @@ module.exports = function (config) {
     customLaunchers: {
       'PhantomJS_custom': {
         base: 'PhantomJS',
-        flags: ['--load-images=false']
+        flags: ['--load-images=false'],
+        singleRun: true, 
+        autoWatch: false
       }
     },
 
