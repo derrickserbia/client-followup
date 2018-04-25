@@ -1,3 +1,4 @@
 sudo vim /etc/apache2/sites-available/jenkins.conf
+    update servername
 sudo a2ensite jenkins
 sudo service apache2 reload
