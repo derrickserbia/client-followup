@@ -66,6 +66,10 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    junitReporter: {outputDir: 'TEST_RESULTS'}
+    junitReporter: 
+      {
+        outputDir: 'TEST_RESULTS',
+        outputFile: 'test-results.xml'
+      }
   })
 }
