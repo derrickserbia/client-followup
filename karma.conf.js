@@ -1,62 +1,71 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
+// Karma configuration
+// Generated on Mon Apr 30 2018 13:39:33 GMT-0400 (Eastern Daylight Time)
 
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular/cli'],
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-phantomjs-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-junit-reporter'),
-      require('@angular/cli/plugins/karma')
-    ],
-    client:{
 
-      // leave Jasmine Spec Runner output visible in browser
-      clearContext: false
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '',
+
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['jasmine'],
+
+
+    // list of files / patterns to load in the browser
+    files: [
+      'src/app/**/*.ts'
+    ],
+
+
+    // list of files / patterns to exclude
+    exclude: [
+    ],
+
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
     },
-    coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
-      fixWebpackSourcePaths: true
-    },
-    angularCli: {
-      environment: 'dev'
-    },
+
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'kjhtml', 'dots', 'junit'],
-    junitReporter : {
-      outputFile: 'test-results.xml'
-    },
+    reporters: ['dots', 'junit'],
+
+
+    // web server port
     port: 9876,
+
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-    logLevel: config.LOG_DEBUG,
 
-    // enable / disable watching  e and executing tests whenever any file changes
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
+
+
+    // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
-    browsers: ['PhantomJS_custom'],
-    phantomjsLauncher: {
 
-      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom) 
-      exitOnResourceError: true
-    },
-    customLaunchers: {
-      'PhantomJS_custom': {
-        base: 'PhantomJS',
-        flags: ['--load-images=false'],
-        singleRun: true, 
-        autoWatch: false
-      }
-    },
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['Chrome', 'PhantomJS'],
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
-  });
-};
+    singleRun: true,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    concurrency: Infinity,
+
+    junitReporter: {outputDir: 'TEST_RESULTS'}
+  })
+}
