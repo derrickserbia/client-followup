@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Jenkins CI
 
-ec2-54-159-197-168.compute-1.amazonaws.com
+ec2-54-89-231-164.compute-1.amazonaws.com
