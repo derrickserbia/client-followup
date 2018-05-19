@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 66.0.3359 (Windows 10 0.0.0)" package="karmaTests" timestamp="2018-05-19T02:09:27" id="0" hostname="DSerbia" make_target="undefined">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"/>
+    </properties>
+  </testsuite>
+  <testsuite name="Chrome 66.0.3359 (Windows 10 0.0.0)" package="karmaTests" timestamp="2018-05-19T02:09:27" id="0" hostname="DSerbia" make_target="undefined" tests="0" errors="1" failures="0" time="0">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"/>
+    </properties>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

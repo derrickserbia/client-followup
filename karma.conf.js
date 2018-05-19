@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Apr 30 2018 13:39:33 GMT-0400 (Eastern Daylight Time)
+// Generated on Fri May 18 2018 21:35:52 GMT-0400 (Eastern Daylight Time)
 
 module.exports = function(config) {
   config.set({
@@ -12,10 +12,9 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
-
     // list of files / patterns to load in the browser
     files: [
-      'src/app/**/*.ts'
+
     ],
 
 
@@ -33,7 +32,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots', 'junit'],
+    reporters: ['progress','junit'],
 
 
     // web server port
@@ -50,26 +49,31 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    junitReporter: 
-      {
-        outputDir: 'TEST_RESULTS',
-        outputFile: 'test-results.xml'
-      }
+    junitReporter: {
+      outputFile: 'test-results.xml'
+    }
+    // ,
+
+    // jenkinsReporter: {
+    //   outputFile: 'test-results.xml',
+    //   suite: 'karmaTests',                 // this will be mapped to the package
+    //   classnameSuffix: 'browser-test'
+    // }
   })
 }
